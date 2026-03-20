@@ -1,0 +1,42 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="960" y1="0" x2="960" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D6ECF3"/>
+      <stop offset="0.48" stop-color="#E9F5FA"/>
+      <stop offset="1" stop-color="#EDF3F9"/>
+    </linearGradient>
+    <linearGradient id="cliff" x1="460" y1="360" x2="1480" y2="740" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B9855C"/>
+      <stop offset="0.52" stop-color="#99674A"/>
+      <stop offset="1" stop-color="#734B35"/>
+    </linearGradient>
+    <linearGradient id="water" x1="960" y1="768" x2="960" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#66A9B8"/>
+      <stop offset="1" stop-color="#2F7185"/>
+    </linearGradient>
+    <filter id="soft" x="-50" y="-50" width="2020" height="1180" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+
+  <g opacity="0.45" filter="url(#soft)">
+    <ellipse cx="480" cy="352" rx="250" ry="120" fill="#FDF8ED"/>
+    <ellipse cx="1320" cy="286" rx="210" ry="96" fill="#FFF7E5"/>
+  </g>
+
+  <path d="M0 742C184 686 392 664 596 700C801 736 1062 834 1269 836C1490 837 1724 726 1920 684V1080H0V742Z" fill="#89A574"/>
+  <path d="M0 770C251 696 464 694 676 760C899 829 1114 910 1360 882C1591 855 1768 746 1920 726V1080H0V770Z" fill="#739361"/>
+
+  <path d="M522 588C626 482 760 432 930 426C1085 420 1234 470 1366 566C1322 698 1243 777 1138 810C1048 838 932 824 846 784C751 739 651 662 522 588Z" fill="url(#cliff)"/>
+  <path d="M660 644C732 574 825 546 926 543C1041 539 1124 576 1202 647C1148 698 1061 732 958 729C843 726 739 696 660 644Z" fill="#4B3328"/>
+
+  <path d="M0 790C280 742 574 778 861 870C1125 954 1453 971 1920 856V1080H0V790Z" fill="url(#water)"/>
+
+  <g opacity="0.2">
+    <path d="M78 908C302 861 515 882 688 937" stroke="#C6E4EA" stroke-width="5" stroke-linecap="round"/>
+    <path d="M816 943C1007 910 1242 930 1473 988" stroke="#C6E4EA" stroke-width="5" stroke-linecap="round"/>
+    <path d="M1220 872C1397 845 1586 869 1781 928" stroke="#C6E4EA" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,59 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+---
+
+<section id="contact" class="py-16 sm:py-20">
+  <div class="section-shell">
+    <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      <SectionHeading
+        label="Contact"
+        title="Parlez-moi de votre projet en 2 minutes."
+        description="Donnez quelques details sur votre activite et vos objectifs. Je reviens vers vous rapidement avec une proposition claire."
+      />
+
+      <form class="surface-card rounded-3xl p-6 sm:p-8" action="#" method="post">
+        <div class="space-y-5">
+          <div>
+            <label for="name" class="mb-2 block text-sm font-medium text-slate-900">Nom</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+              class="form-field"
+              placeholder="Votre nom"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="mb-2 block text-sm font-medium text-slate-900">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class="form-field"
+              placeholder="vous@entreprise.fr"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="mb-2 block text-sm font-medium text-slate-900">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="5"
+              class="form-field resize-y"
+              placeholder="Dites-moi ce que vous souhaitez ameliorer sur votre site."
+            ></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary mt-6 w-full">Envoyer ma demande</button>
+      </form>
+    </div>
+  </div>
+</section>

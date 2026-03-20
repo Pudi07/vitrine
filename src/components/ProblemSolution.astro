@@ -1,0 +1,36 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+---
+
+<section class="py-16 sm:py-20">
+  <div class="section-shell">
+    <SectionHeading
+      label="Pourquoi changer"
+      title="La plupart des sites d&apos;activites locales ne transforment pas les visites en clients."
+      description="Un site ancien, peu lisible ou mal structure vous fait perdre des opportunites tous les jours. Un site moderne rend votre offre plus simple a comprendre et plus facile a contacter."
+      centered={true}
+    />
+
+    <div class="mt-10 grid gap-5 lg:grid-cols-2">
+      <article class="surface-card rounded-3xl p-6 sm:p-8">
+        <h3 class="text-xl font-semibold text-slate-950">Ce qui bloque souvent</h3>
+        <ul class="mt-5 space-y-4 text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
+          <li>Design date qui ne donne pas confiance.</li>
+          <li>Infos importantes cachees ou trop longues.</li>
+          <li>Navigation confuse sur mobile.</li>
+          <li>Absence d&apos;appel a l&apos;action clair.</li>
+        </ul>
+      </article>
+
+      <article class="surface-card rounded-3xl p-6 sm:p-8">
+        <h3 class="text-xl font-semibold text-slate-950">Ce que je mets en place</h3>
+        <ul class="mt-5 space-y-4 text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
+          <li>Une presentation nette de vos prestations.</li>
+          <li>Un parcours mobile fluide et sans friction.</li>
+          <li>Des messages simples, orientes client.</li>
+          <li>Des CTA visibles pour declencher la prise de contact.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

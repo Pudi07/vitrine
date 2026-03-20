@@ -1,0 +1,43 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+
+const projects = [
+  {
+    type: "Restaurant",
+    name: "Le Comptoir de Quartier",
+    result: "Menu clair, reservation visible, + demandes par telephone."
+  },
+  {
+    type: "Gite",
+    name: "Maison des Collines",
+    result: "Presentation rassurante, calendrier simplifie, + demandes directes."
+  },
+  {
+    type: "Artisan",
+    name: "Atelier Martin",
+    result: "Services bien expliques, preuves de serieux, + devis qualifies."
+  }
+];
+---
+
+<section id="exemples" class="py-16 sm:py-20">
+  <div class="section-shell">
+    <SectionHeading
+      label="Exemples"
+      title="Des maquettes pensees pour vendre, pas juste pour faire joli."
+      description="Voici des exemples de direction visuelle et de structure pour des activites locales."
+    />
+
+    <div class="mt-10 grid gap-5 lg:grid-cols-3">
+      {
+        projects.map((project) => (
+          <article class="surface-card rounded-3xl p-6 sm:p-8">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)]">{project.type}</p>
+            <h3 class="mt-3 text-2xl font-semibold text-slate-950">{project.name}</h3>
+            <p class="mt-4 text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">{project.result}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
