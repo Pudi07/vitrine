@@ -1,59 +1,88 @@
----
+﻿---
 import SectionHeading from "./SectionHeading.astro";
 ---
 
 <section id="contact" class="py-16 sm:py-20">
   <div class="section-shell">
-    <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-      <SectionHeading
-        label="Contact"
-        title="Parlez-moi de votre projet en 2 minutes."
-        description="Donnez quelques details sur votre activite et vos objectifs. Je reviens vers vous rapidement avec une proposition claire."
-      />
+    <div
+      class="rounded-3xl border border-[var(--color-border)] p-6 sm:p-8 lg:p-10"
+      style="background: var(--contact-shell-bg); box-shadow: var(--contact-shell-shadow);"
+    >
+      <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <div class="space-y-6">
+          <SectionHeading
+            label="Contact"
+            title="Parlez-moi de votre projet, je vous rappelle rapidement."
+          />
 
-      <form class="surface-card rounded-3xl p-6 sm:p-8" action="#" method="post">
-        <div class="space-y-5">
-          <div>
-            <label for="name" class="mb-2 block text-sm font-medium text-slate-900">Nom</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              autocomplete="name"
-              required
-              class="form-field"
-              placeholder="Votre nom"
-            />
-          </div>
+          <ul class="space-y-3 text-sm text-[var(--color-muted)] sm:text-base">
+            <li class="flex gap-3">
+              <span class="mt-1.5 inline-block h-2 w-2 rounded-full bg-[var(--color-accent)]"></span>
+              <span>Échange clair et direct.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1.5 inline-block h-2 w-2 rounded-full bg-[var(--color-accent)]"></span>
+              <span>Plan d&apos;action concret pour votre activité.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1.5 inline-block h-2 w-2 rounded-full bg-[var(--color-accent)]"></span>
+              <span>Un seul interlocuteur du début à la fin.</span>
+            </li>
+          </ul>
 
-          <div>
-            <label for="email" class="mb-2 block text-sm font-medium text-slate-900">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autocomplete="email"
-              required
-              class="form-field"
-              placeholder="vous@entreprise.fr"
-            />
-          </div>
-
-          <div>
-            <label for="message" class="mb-2 block text-sm font-medium text-slate-900">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows="5"
-              class="form-field resize-y"
-              placeholder="Dites-moi ce que vous souhaitez ameliorer sur votre site."
-            ></textarea>
+          <div class="pt-1">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-muted)]">Contact direct</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <a class="contact-chip" href="tel:+33632692839" aria-label="Appeler au 06 32 69 28 39">06 32 69 28 39</a>
+              <a class="contact-chip" href="mailto:contact@pierre-barth.fr">contact@pierre-barth.fr</a>
+            </div>
           </div>
         </div>
 
-        <button type="submit" class="btn-primary mt-6 w-full">Envoyer ma demande</button>
-      </form>
+        <form class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-elevated)] p-6 sm:p-8" action="https://formspree.io/f/xlgorkjk" method="POST">
+          <div class="space-y-5">
+            <div>
+              <label for="name" class="mb-2 block text-sm font-medium text-[var(--color-text)]">Nom</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                class="form-field"
+                placeholder="Votre nom"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="mb-2 block text-sm font-medium text-[var(--color-text)]">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="form-field"
+                placeholder="Votre adresse email"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="mb-2 block text-sm font-medium text-[var(--color-text)]">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                class="form-field resize-y"
+                placeholder="Décrivez votre projet en quelques lignes."
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary mt-6 w-full">Envoyer</button>
+        </form>
+      </div>
     </div>
   </div>
 </section>

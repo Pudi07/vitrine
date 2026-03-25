@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Projet OSUG | Bornes interactives et globe projeté"
+  description="Refonte des bornes interactives et développement d'un globe 3D projeté pour l'espace Muséo de l'OSUG (CNRS)."
+>
+  <section class="py-16 sm:py-20">
+    <div class="section-shell max-w-4xl">
+      <a href="/#exemples" class="btn-secondary">Retour aux exemples</a>
+
+      <h1 class="mt-8 text-4xl font-semibold leading-tight text-[var(--color-text)] sm:text-5xl">
+        Projet OSUG - Bornes interactives & globe projeté
+      </h1>
+
+      <div class="mt-10 space-y-10">
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-[var(--color-text)]">Contexte</h2>
+          <p class="text-base leading-relaxed text-[var(--color-muted)] sm:text-lg">
+            Intervention pour l'Observatoire des Sciences de l'Univers de Grenoble (OSUG) dans le cadre de l'espace muséographique Muséo.
+          </p>
+          <p class="text-base leading-relaxed text-[var(--color-muted)] sm:text-lg">
+            <strong class="text-[var(--color-text)]">Objectif :</strong> moderniser les interfaces des bornes interactives et développer une expérience immersive autour d'un globe terrestre manipulable.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-[var(--color-text)]">Refonte des bornes interactives</h2>
+          <ul class="space-y-3 text-base leading-relaxed text-[var(--color-muted)] sm:text-lg">
+            <li>- Refonte complète des interfaces existantes</li>
+            <li>- Création de maquettes (Figma) adaptées à un usage tactile grand public</li>
+            <li>- Simplification des parcours utilisateurs (navigation claire, lisibilité, accessibilité)</li>
+            <li>- Intégration front-end en TypeScript dans l'écosystème existant</li>
+          </ul>
+          <p class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-base text-[var(--color-text)] sm:text-lg">
+            <strong>Résultat :</strong> des interfaces plus modernes, intuitives et adaptées à un usage en musée.
+          </p>
+
+          <figure class="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]">
+            <img
+              src="/images/Bornes.png"
+              alt="Placeholder photo des bornes interactives"
+              class="h-auto w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold text-[var(--color-text)]">Développement du globe interactif projeté</h2>
+          <ul class="space-y-3 text-base leading-relaxed text-[var(--color-muted)] sm:text-lg">
+            <li>- Développement d'un globe 3D en temps réel (WebGL / Three.js)</li>
+            <li>- Projection sur une sphère physique manipulée par les visiteurs</li>
+            <li>- Synchronisation des mouvements réels avec le rendu numérique</li>
+            <li>- Gestion de textures dynamiques (vidéos scientifiques)</li>
+            <li>- Architecture technique sur Raspberry Pi avec communication temps réel</li>
+          </ul>
+          <p class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-base text-[var(--color-text)] sm:text-lg">
+            <strong>Résultat :</strong> une installation immersive où le visiteur manipule directement le globe.
+          </p>
+
+          <figure class="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]">
+            <img
+              src="/images/Globe.png"
+              alt="Placeholder photo du globe projeté"
+              class="h-auto w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </section>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

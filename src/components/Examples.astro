@@ -3,19 +3,25 @@ import SectionHeading from "./SectionHeading.astro";
 
 const projects = [
   {
-    type: "Restaurant",
-    name: "Le Comptoir de Quartier",
-    result: "Menu clair, reservation visible, + demandes par telephone."
+    title: "Découvrir Salavas",
+    image: "/images/Salavas_Site.png",
+    description: "Site immersif pour valoriser un village touristique, avec navigation simple et mise en avant des points d’intérêt locaux.",
+    href: "https://salavas.pierre-barth.workers.dev",
+    external: true
   },
   {
-    type: "Gite",
-    name: "Maison des Collines",
-    result: "Presentation rassurante, calendrier simplifie, + demandes directes."
+    title: "Aven d'Orgnac Pédagogie",
+    image: "/images/Aven_Orgnac_Site.png",
+    description: "Interface web claire pour présenter des contenus pédagogiques, avec une navigation structurée et accessible pour différents publics.",
+    href: "https://pedagogie.orgnac.com/",
+    external: true
   },
   {
-    type: "Artisan",
-    name: "Atelier Martin",
-    result: "Services bien expliques, preuves de serieux, + devis qualifies."
+    title: "Espace Museo de l'OSUG (CNRS)",
+    image: "/images/Osug_Site.png",
+    description: "Conception d’interfaces et développement d’un globe interactif en temps réel, pour une installation publique fiable et fluide.",
+    href: "/projets/espace-museo-osug",
+    external: false
   }
 ];
 ---
@@ -24,18 +30,32 @@ const projects = [
   <div class="section-shell">
     <SectionHeading
       label="Exemples"
-      title="Des maquettes pensees pour vendre, pas juste pour faire joli."
-      description="Voici des exemples de direction visuelle et de structure pour des activites locales."
+      title="Quelques réalisations"
     />
 
     <div class="mt-10 grid gap-5 lg:grid-cols-3">
       {
         projects.map((project) => (
-          <article class="surface-card rounded-3xl p-6 sm:p-8">
-            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)]">{project.type}</p>
-            <h3 class="mt-3 text-2xl font-semibold text-slate-950">{project.name}</h3>
-            <p class="mt-4 text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">{project.result}</p>
-          </article>
+          <a
+            href={project.href}
+            target={project.external ? "_blank" : undefined}
+            rel={project.external ? "noreferrer noopener" : undefined}
+            class="group surface-card block overflow-hidden rounded-3xl transition-transform duration-300 hover:-translate-y-1"
+          >
+            <div class="aspect-[16/10] overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-elevated)]">
+              <img
+                src={project.image}
+                alt={`Aperçu du projet ${project.title}`}
+                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="p-6 sm:p-8">
+              <h3 class="text-2xl font-semibold text-[var(--color-text)]">{project.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">{project.description}</p>
+            </div>
+          </a>
         ))
       }
     </div>

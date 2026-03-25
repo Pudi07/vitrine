@@ -1,13 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #f8fafc;
+  --color-bg: #f5f7fb;
   --color-surface: #ffffff;
+  --color-elevated: #ffffff;
   --color-text: #0f172a;
-  --color-muted: #475569;
-  --color-border: #dbe4ee;
+  --color-muted: #4b5563;
+  --color-border: #d6dee8;
   --color-accent: #0f766e;
   --color-accent-strong: #115e59;
+  --color-header: rgba(255, 255, 255, 0.82);
+  --body-glow-one: rgba(15, 118, 110, 0.1);
+  --body-glow-two: rgba(148, 163, 184, 0.14);
+  --hero-overlay-gradient: linear-gradient(180deg, rgba(214, 231, 244, 0.08) 0%, rgba(245, 247, 251, 0.7) 58%, rgba(245, 247, 251, 0.96) 100%), radial-gradient(920px 360px at 78% 12%, rgba(15, 118, 110, 0.16), transparent 62%);
+  --hero-card-bg: rgba(255, 255, 255, 0.84);
+  --hero-card-border: rgba(255, 255, 255, 0.75);
+  --hero-card-shadow: 0 22px 55px -34px rgba(15, 23, 42, 0.52);
+  --contact-shell-bg: linear-gradient(130deg, rgba(15, 118, 110, 0.09), rgba(255, 255, 255, 0.98) 42%);
+  --contact-shell-shadow: 0 24px 60px -42px rgba(15, 23, 42, 0.35);
+  --focus-ring-primary: rgba(15, 118, 110, 0.35);
+  --focus-ring-secondary: rgba(15, 118, 110, 0.25);
+  --form-field-bg: #ffffff;
+  --form-placeholder: #94a3b8;
+  --btn-secondary-bg: var(--color-elevated);
+  --btn-secondary-bg-hover: #f1f5f9;
+  --btn-secondary-border-hover: #c9d4e0;
+  --selection-bg: rgba(15, 118, 110, 0.2);
+  --theme-icon-filter: none;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #070d15;
+  --color-surface: #101926;
+  --color-elevated: #0c1522;
+  --color-text: #ecf2fa;
+  --color-muted: #9fb1c4;
+  --color-border: #273446;
+  --color-accent: #22c1ad;
+  --color-accent-strong: #1aa594;
+  --color-header: rgba(7, 13, 20, 0.78);
+  --body-glow-one: rgba(34, 193, 173, 0.14);
+  --body-glow-two: rgba(50, 79, 118, 0.2);
+  --hero-overlay-gradient: linear-gradient(180deg, rgba(4, 10, 16, 0.12) 0%, rgba(7, 13, 21, 0.8) 58%, rgba(7, 13, 21, 0.95) 100%), radial-gradient(920px 360px at 78% 12%, rgba(34, 193, 173, 0.24), transparent 62%);
+  --hero-card-bg: rgba(10, 16, 24, 0.82);
+  --hero-card-border: #273446;
+  --hero-card-shadow: 0 24px 58px -35px rgba(0, 0, 0, 0.68);
+  --contact-shell-bg: linear-gradient(130deg, rgba(34, 193, 173, 0.11), rgba(11, 17, 26, 0.98) 42%);
+  --contact-shell-shadow: 0 24px 60px -42px rgba(0, 0, 0, 0.75);
+  --focus-ring-primary: rgba(34, 193, 173, 0.32);
+  --focus-ring-secondary: rgba(34, 193, 173, 0.26);
+  --form-field-bg: #09121d;
+  --form-placeholder: #73869d;
+  --btn-secondary-bg: #0c1522;
+  --btn-secondary-bg-hover: #122033;
+  --btn-secondary-border-hover: #3a4b61;
+  --selection-bg: rgba(34, 193, 173, 0.28);
+  --theme-icon-filter: invert(1) brightness(1.15);
 }
 
 html {
@@ -19,7 +67,8 @@ body {
   font-family: "Manrope", "Segoe UI", "Helvetica Neue", sans-serif;
   color: var(--color-text);
   background:
-    radial-gradient(1200px 500px at top right, rgba(15, 118, 110, 0.08), transparent 60%),
+    radial-gradient(1200px 540px at top right, var(--body-glow-one), transparent 62%),
+    radial-gradient(900px 460px at top left, var(--body-glow-two), transparent 58%),
     var(--color-bg);
   text-rendering: optimizeLegibility;
 }
@@ -38,7 +87,7 @@ p {
 }
 
 ::selection {
-  background: rgba(15, 118, 110, 0.2);
+  background: var(--selection-bg);
 }
 
 .section-shell {
@@ -63,7 +112,7 @@ p {
 .surface-card {
   border: 1px solid var(--color-border);
   background-color: var(--color-surface);
-  box-shadow: 0 14px 45px -35px rgba(15, 23, 42, 0.45);
+  box-shadow: 0 14px 45px -35px rgba(0, 0, 0, 0.78);
 }
 
 .btn-primary {
@@ -86,7 +135,7 @@ p {
 }
 
 .btn-primary:focus-visible {
-  outline: 2px solid rgba(15, 118, 110, 0.35);
+  outline: 2px solid var(--focus-ring-primary);
   outline-offset: 2px;
 }
 
@@ -100,19 +149,19 @@ p {
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #0f172a;
-  background-color: #ffffff;
+  color: var(--color-text);
+  background-color: var(--btn-secondary-bg);
   text-decoration: none;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-secondary:hover {
-  border-color: #c9d4e0;
-  background-color: #f1f5f9;
+  border-color: var(--btn-secondary-border-hover);
+  background-color: var(--btn-secondary-bg-hover);
 }
 
 .btn-secondary:focus-visible {
-  outline: 2px solid rgba(15, 118, 110, 0.25);
+  outline: 2px solid var(--focus-ring-secondary);
   outline-offset: 2px;
 }
 
@@ -120,21 +169,123 @@ p {
   width: 100%;
   border: 1px solid var(--color-border);
   border-radius: 1rem;
-  background-color: #ffffff;
+  background-color: var(--form-field-bg);
   padding: 0.8rem 1rem;
-  color: #0f172a;
+  color: var(--color-text);
   font-size: 1rem;
   line-height: 1.4;
 }
 
 .form-field::placeholder {
-  color: #94a3b8;
+  color: var(--form-placeholder);
 }
 
 .form-field:focus {
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.28);
+  box-shadow: 0 0 0 3px var(--focus-ring-primary);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+  background-color: var(--btn-secondary-bg);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--btn-secondary-border-hover);
+  background-color: var(--btn-secondary-bg-hover);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--focus-ring-secondary);
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+  position: absolute;
+  width: 1.1rem;
+  height: 1.1rem;
+  object-fit: contain;
+  filter: var(--theme-icon-filter);
+  transition: opacity 0.24s ease, transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.theme-toggle-icon--sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.theme-toggle-icon--moon {
+  opacity: 0;
+  transform: scale(0.65) rotate(-50deg);
+}
+
+:root[data-theme="dark"] .theme-toggle-icon--sun {
+  opacity: 0;
+  transform: scale(0.65) rotate(50deg);
+}
+
+:root[data-theme="dark"] .theme-toggle-icon--moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.theme-toggle-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  padding: 0.45rem 0.78rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-muted);
+  background-color: var(--color-elevated);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-chip:hover {
+  color: var(--color-text);
+  border-color: var(--btn-secondary-border-hover);
+  background-color: var(--btn-secondary-bg-hover);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 220ms;
+    animation-timing-function: ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle-icon {
+    transition: none;
+  }
 }
 
 @media (min-width: 640px) {
@@ -142,4 +293,11 @@ p {
   .btn-secondary {
     font-size: 1rem;
   }
+
+  .theme-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
 }
+
+
