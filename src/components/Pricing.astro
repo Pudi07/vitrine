@@ -1,0 +1,115 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+
+const offers = [
+  {
+    name: "Offre Essentielle",
+    price: "À partir de 490 €",
+    intro: "Pour les petites structures qui veulent une présence en ligne sérieuse, moderne et efficace.",
+    cta: "Choisir l'offre essentielle",
+    highlight: false,
+    features: [
+      "Design unique adapté à vos objectifs",
+      "Site vitrine clair et professionnel",
+      "Mise en page pensée pour rassurer et donner envie de vous contacter",
+      "Expérience mobile soignée, simple et agréable à utiliser",
+      "Navigation claire pour accéder rapidement aux informations importantes",
+      "Sections essentielles : accueil, présentation, services ou prestations, contact",
+      "Intégration de vos textes, photos et informations",
+      "Boutons d'appel à l'action visibles : appel, email, demande de devis, réservation",
+      "Formulaire de contact simple et efficace",
+      "Site rapide, fluide et optimisé pour rester agréable à consulter partout",
+      "Mise en ligne du site"
+    ]
+  },
+  {
+    name: "Offre Complète",
+    price: "À partir de 980 €",
+    intro: "Pour les professionnels qui veulent un site plus ambitieux et mieux préparé pour être davantage trouvé en ligne.",
+    cta: "Choisir l'offre complète",
+    highlight: true,
+    features: [
+      "Tout ce qui est prévu dans l'offre Essentielle",
+      "Étude de structure pour transformer davantage de visiteurs en contacts",
+      "Travail plus poussé sur les textes, les accroches et les attentes de vos clients",
+      "Analyse des recherches et tendances les plus pertinentes pour votre activité",
+      "Pages ou sections supplémentaires selon votre activité, avec jusqu'à 5 pages incluses",
+      "Optimisation avancée pour renforcer votre visibilité sur les moteurs de recherche et les assistants IA comme ChatGPT ou Gemini",
+      "Ajout de versions multilingues avec traduction soignée"
+    ]
+  }
+];
+---
+
+<section id="tarifs" class="py-16 sm:py-20">
+  <div class="section-shell">
+    <SectionHeading
+      label="Tarifs"
+      title="Deux offres claires pour un site à votre image."
+      description="Chaque projet est réalisé sur mesure, sans modèle générique, pour correspondre à votre activité et à votre image."
+    />
+
+    <div class="mt-10 grid gap-5 lg:grid-cols-2">
+      {
+        offers.map((offer) => (
+          <article
+            class:list={[
+              "surface-card rounded-3xl p-6 sm:p-8",
+              offer.highlight && "relative border-[var(--color-accent)]"
+            ]}
+          >
+
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <h3 class="text-2xl font-semibold text-[var(--color-text)] sm:text-3xl">{offer.name}</h3>
+                <p class="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
+                  {offer.intro}
+                </p>
+              </div>
+
+              <p class="inline-flex w-fit shrink-0 items-center rounded-full border border-[var(--color-border)] bg-[var(--color-elevated)] px-4 py-2 text-sm font-semibold text-[var(--color-accent)] sm:text-base">
+                {offer.price}
+              </p>
+            </div>
+
+            <div class="mt-6 border-t border-[var(--color-border)] pt-6">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)]">
+                Ce qui est inclus
+              </p>
+
+              <ul class="mt-4 space-y-3 text-sm text-[var(--color-muted)] sm:text-base">
+                {
+                  offer.features.map((feature) => (
+                    <li class="flex gap-3">
+                      <span class="mt-1.5 inline-block h-2 w-2 shrink-0 rounded-full bg-[var(--color-accent)]"></span>
+                      <span>{feature}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+
+            <a href="#contact" class:list={["mt-8 w-full", offer.highlight ? "btn-primary" : "btn-secondary"]}>
+              {offer.cta}
+            </a>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-6 rounded-3xl border border-[var(--color-border)] bg-[var(--color-elevated)] p-6 sm:p-8">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-accent)]">Abonnement Optionnel</p>
+          <h3 class="mt-2 text-2xl font-semibold text-[var(--color-text)]">
+            Hébergement, maintenance et mises à jour - 29 €/mois
+          </h3>
+          <p class="mt-3 text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
+            Vous gardez un site stable, sécurisé et à jour, sans avoir à vous en occuper.
+          </p>
+        </div>
+        <a href="#contact" class="btn-secondary w-full lg:w-auto">Ajouter ce suivi</a>
+      </div>
+    </div>
+  </div>
+</section>
