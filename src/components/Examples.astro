@@ -1,24 +1,28 @@
 ---
+import { Image } from "astro:assets";
 import SectionHeading from "./SectionHeading.astro";
+import salavasImage from "../assets/images/Salavas_Site.png";
+import avenOrgnacImage from "../assets/images/Aven_Orgnac_Site.png";
+import osugImage from "../assets/images/Osug_Site.png";
 
 const projects = [
   {
     title: "Découvrir Salavas",
-    image: "/images/Salavas_Site.png",
+    image: salavasImage,
     description: "Site immersif pour valoriser un village touristique, avec navigation simple et mise en avant des points d’intérêt locaux.",
     href: "https://salavas.pierre-barth.workers.dev",
     external: true
   },
   {
     title: "Aven d'Orgnac Pédagogie",
-    image: "/images/Aven_Orgnac_Site.png",
+    image: avenOrgnacImage,
     description: "Interface web claire pour présenter des contenus pédagogiques, avec une navigation structurée et accessible pour différents publics.",
     href: "https://pedagogie.orgnac.com/",
     external: true
   },
   {
     title: "Espace Museo de l'OSUG (CNRS)",
-    image: "/images/Osug_Site.png",
+    image: osugImage,
     description: "Conception d’interfaces et développement d’un globe interactif en temps réel, pour une installation publique fiable et fluide.",
     href: "/projets/espace-museo-osug",
     external: false
@@ -43,12 +47,13 @@ const projects = [
             class="group surface-card block overflow-hidden rounded-3xl transition-transform duration-300 hover:-translate-y-1"
           >
             <div class="aspect-[16/10] overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-elevated)]">
-              <img
+              <Image
                 src={project.image}
                 alt={`Aperçu du projet ${project.title}`}
+                width={960}
+                sizes="(min-width: 1024px) 22rem, (min-width: 640px) 50vw, 100vw"
+                quality="mid"
                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                loading="lazy"
-                decoding="async"
               />
             </div>
             <div class="p-6 sm:p-8">

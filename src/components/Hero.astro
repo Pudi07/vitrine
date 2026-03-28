@@ -1,11 +1,10 @@
+---
+import { Image } from "astro:assets";
+import websiteMockup from "../assets/images/Website Mockup.png";
+---
+
 <section class="relative isolate overflow-hidden pt-0 pb-16 sm:pb-24">
-  <img
-    src="/images/tim-oun-ZCnX6CR1Sto-unsplash.jpg"
-    alt=""
-    class="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover object-top"
-    loading="eager"
-    decoding="async"
-  />
+  <div class="hero-backdrop absolute inset-0 z-0" aria-hidden="true"></div>
   <div
     class="absolute inset-0 z-10"
     style="background: var(--hero-overlay-gradient);"
@@ -31,16 +30,17 @@
 
     <figure class="relative lg:-mr-8">
       <div class="relative lg:translate-x-6 xl:translate-x-10">
-        <img
-          src="/images/Website%20Mockup.png"
+        <Image
+          src={websiteMockup}
           alt="Aperçu d'un site web sur ordinateur et mobile"
+          width={1280}
+          sizes="(min-width: 1280px) 42rem, (min-width: 1024px) 50vw, 92vw"
+          quality="mid"
+          priority
+          fetchpriority="high"
           class="w-full max-w-none object-contain lg:scale-[1.18]"
-          loading="lazy"
-          decoding="async"
         />
       </div>
     </figure>
   </div>
 </section>
-
-

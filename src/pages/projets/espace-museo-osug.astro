@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import bornesImage from "../../assets/images/Bornes.png";
+import globeImage from "../../assets/images/Globe.png";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
@@ -38,12 +41,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </p>
 
           <figure class="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]">
-            <img
-              src="/images/Bornes.png"
-              alt="Placeholder photo des bornes interactives"
+            <Image
+              src={bornesImage}
+              alt="Photo des bornes interactives"
+              width={1400}
+              sizes="(min-width: 1024px) 56rem, 100vw"
+              quality="mid"
               class="h-auto w-full object-cover"
-              loading="lazy"
-              decoding="async"
             />
           </figure>
         </section>
@@ -62,12 +66,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </p>
 
           <figure class="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]">
-            <img
-              src="/images/Globe.png"
-              alt="Placeholder photo du globe projeté"
+            <Image
+              src={globeImage}
+              alt="Photo du globe projeté"
+              width={1400}
+              sizes="(min-width: 1024px) 56rem, 100vw"
+              quality="mid"
               class="h-auto w-full object-cover"
-              loading="lazy"
-              decoding="async"
             />
           </figure>
         </section>
