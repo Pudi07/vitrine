@@ -1,10 +1,22 @@
 ---
 import { Image } from "astro:assets";
+import heroBackground from "../assets/images/tim-oun-ZCnX6CR1Sto-unsplash.jpg";
 import websiteMockup from "../assets/images/Website Mockup.png";
 ---
 
 <section class="relative isolate overflow-hidden pt-0 pb-16 sm:pb-24">
   <div class="hero-backdrop absolute inset-0 z-0" aria-hidden="true"></div>
+  <Image
+    src={heroBackground}
+    alt=""
+    aria-hidden="true"
+    width={1920}
+    sizes="100vw"
+    quality="low"
+    loading="eager"
+    fetchpriority="low"
+    class="pointer-events-none absolute inset-0 z-5 h-full w-full object-cover object-top"
+  />
   <div
     class="absolute inset-0 z-10"
     style="background: var(--hero-overlay-gradient);"
